@@ -54,7 +54,11 @@ namespace pryPosse20260401
             varPrecio = int.Parse(mtbPrecio.Text);
             varNombre = txtNombre.Text;
             varCategoria = cmbCategoria.Text;
-            
+
+            lblRegVariables.Text = varCodigo +" "+ varStock.ToString() + " " + varCategoria + " " + varDescripcion + " " + varPrecio.ToString() + " " + varNombre;
+        
+            string datoagregado = varCodigo.ToString() + " " + varStock.ToString() + " " + varCategoria + " " + varDescripcion + " " + varPrecio.ToString() + " " + varNombre;
+            MessageBox.Show(datoagregado);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
