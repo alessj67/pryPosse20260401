@@ -35,8 +35,8 @@
             this.lblCargaDatos = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,6 +46,8 @@
             this.mtbCodigo = new System.Windows.Forms.MaskedTextBox();
             this.mtbPrecio = new System.Windows.Forms.MaskedTextBox();
             this.mtbStock = new System.Windows.Forms.MaskedTextBox();
+            this.lblRegistroIG = new System.Windows.Forms.Label();
+            this.lblRegVariables = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreP
@@ -113,20 +115,22 @@
             this.lblPrecio.Text = "Precio";
             this.lblPrecio.Click += new System.EventHandler(this.label2_Click_1);
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtNombre.Location = new System.Drawing.Point(99, 61);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            this.textBox3.Location = new System.Drawing.Point(361, 60);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 60);
-            this.textBox3.TabIndex = 8;
+            this.txtDescripcion.Location = new System.Drawing.Point(361, 60);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(138, 60);
+            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // btnAgregar
             // 
@@ -178,6 +182,12 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "pan ",
+            "queso",
+            "pan",
+            "queso",
+            "pan"});
             this.cmbCategoria.Location = new System.Drawing.Point(361, 178);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(138, 21);
@@ -192,6 +202,7 @@
             this.mtbCodigo.Size = new System.Drawing.Size(100, 20);
             this.mtbCodigo.TabIndex = 17;
             this.mtbCodigo.ValidatingType = typeof(int);
+            this.mtbCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbCodigo_MaskInputRejected);
             // 
             // mtbPrecio
             // 
@@ -201,6 +212,7 @@
             this.mtbPrecio.Size = new System.Drawing.Size(138, 20);
             this.mtbPrecio.TabIndex = 18;
             this.mtbPrecio.ValidatingType = typeof(int);
+            this.mtbPrecio.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbPrecio_MaskInputRejected);
             // 
             // mtbStock
             // 
@@ -210,6 +222,29 @@
             this.mtbStock.Size = new System.Drawing.Size(100, 20);
             this.mtbStock.TabIndex = 19;
             this.mtbStock.ValidatingType = typeof(int);
+            this.mtbStock.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbStock_MaskInputRejected);
+            // 
+            // lblRegistroIG
+            // 
+            this.lblRegistroIG.AutoSize = true;
+            this.lblRegistroIG.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroIG.Location = new System.Drawing.Point(70, 322);
+            this.lblRegistroIG.Name = "lblRegistroIG";
+            this.lblRegistroIG.Size = new System.Drawing.Size(12, 18);
+            this.lblRegistroIG.TabIndex = 20;
+            this.lblRegistroIG.Text = ".";
+            this.lblRegistroIG.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // lblRegVariables
+            // 
+            this.lblRegVariables.AutoSize = true;
+            this.lblRegVariables.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegVariables.Location = new System.Drawing.Point(396, 322);
+            this.lblRegVariables.Name = "lblRegVariables";
+            this.lblRegVariables.Size = new System.Drawing.Size(12, 18);
+            this.lblRegVariables.TabIndex = 21;
+            this.lblRegVariables.Text = ".";
+            this.lblRegVariables.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // Form1
             // 
@@ -218,6 +253,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblRegVariables);
+            this.Controls.Add(this.lblRegistroIG);
             this.Controls.Add(this.mtbStock);
             this.Controls.Add(this.mtbPrecio);
             this.Controls.Add(this.mtbCodigo);
@@ -226,8 +263,8 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblCargaDatos);
@@ -237,6 +274,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,8 +288,8 @@
         private System.Windows.Forms.Label lblCargaDatos;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
@@ -261,6 +299,8 @@
         private System.Windows.Forms.MaskedTextBox mtbCodigo;
         private System.Windows.Forms.MaskedTextBox mtbPrecio;
         private System.Windows.Forms.MaskedTextBox mtbStock;
+        private System.Windows.Forms.Label lblRegistroIG;
+        private System.Windows.Forms.Label lblRegVariables;
     }
 }
 
