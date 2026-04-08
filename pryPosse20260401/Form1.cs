@@ -41,12 +41,58 @@ namespace pryPosse20260401
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //desde interfaz grafica
-            lblRegistroIG.Text = mtbCodigo.Text + ' ' + '/' 
-                + txtNombre.Text + ' ' + '/'
-                + mtbStock.Text + ' ' + '/'
-                + mtbPrecio.Text + ' ' + '/'
-                + cmbCategoria.Text;
+            if (mtbCodigo.Text == "")
+            {
+                MessageBox.Show("Completá el código nerea");
+                mtbCodigo.Focus();
+            }
+            else
+            {
+                if (txtNombre.Text == "")
+                {
+                    MessageBox.Show("Completá el nombre nerea");
+                    txtNombre.Focus();
+                }
+                else
+                {
+                    if (txtDescripcion.Text == "")
+                    { 
+                        MessageBox.Show("Completá la descripción nerea");
+                        txtDescripcion.Focus();
+                    }
+                    else
+                    {
+                        if (mtbPrecio.Text == "")
+                        {
+                            MessageBox.Show("Completá el precio nerea");
+                            mtbPrecio.Focus();
+                        }
+                        else 
+                        {
+                            if (mtbStock.Text == "")
+                            {
+                                MessageBox.Show("Marcá el stock nerea");
+                                mtbStock.Focus();   
+                            }
+                            else
+                            {
+                                if (cmbCategoria.Text == "")
+                                {
+                                    MessageBox.Show("Seleccioná la categoría nerea");
+                                    cmbCategoria.Focus();   
+                                }
+                            }
+                        }
+                    }                           
+                }   
+                    
+            }
+                //desde interfaz grafica
+                lblRegistroIG.Text = mtbCodigo.Text + ' ' + '/'
+                    + txtNombre.Text + ' ' + '/'
+                    + mtbStock.Text + ' ' + '/'
+                    + mtbPrecio.Text + ' ' + '/'
+                    + cmbCategoria.Text;
 
             varCodigo = mtbCodigo.Text;
             //pasar un texto a numero 2 formas:
