@@ -91,7 +91,7 @@
             this.lblCargaDatos.Name = "lblCargaDatos";
             this.lblCargaDatos.Size = new System.Drawing.Size(159, 20);
             this.lblCargaDatos.TabIndex = 3;
-            this.lblCargaDatos.Text = "Gestion de inventario";
+            this.lblCargaDatos.Text = "Gestión de inventario";
             this.lblCargaDatos.Click += new System.EventHandler(this.lblCargaDatos_Click);
             // 
             // lblStock
@@ -120,7 +120,7 @@
             this.txtNombre.Location = new System.Drawing.Point(99, 61);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtDescripcion
@@ -129,7 +129,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(138, 60);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TabIndex = 3;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // btnAgregar
@@ -138,7 +138,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(99, 258);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(81, 34);
-            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
@@ -149,7 +149,7 @@
             this.btnModificar.Location = new System.Drawing.Point(220, 258);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(82, 34);
-            this.btnModificar.TabIndex = 12;
+            this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.button1_Click_1);
@@ -161,7 +161,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(399, 258);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(76, 34);
-            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -191,7 +191,7 @@
             this.cmbCategoria.Location = new System.Drawing.Point(361, 178);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(138, 21);
-            this.cmbCategoria.TabIndex = 16;
+            this.cmbCategoria.TabIndex = 5;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // mtbCodigo
@@ -200,7 +200,7 @@
             this.mtbCodigo.Mask = "999999";
             this.mtbCodigo.Name = "mtbCodigo";
             this.mtbCodigo.Size = new System.Drawing.Size(100, 20);
-            this.mtbCodigo.TabIndex = 17;
+            this.mtbCodigo.TabIndex = 1;
             this.mtbCodigo.ValidatingType = typeof(int);
             this.mtbCodigo.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbCodigo_MaskInputRejected);
             // 
@@ -210,7 +210,7 @@
             this.mtbPrecio.Mask = "999999";
             this.mtbPrecio.Name = "mtbPrecio";
             this.mtbPrecio.Size = new System.Drawing.Size(138, 20);
-            this.mtbPrecio.TabIndex = 18;
+            this.mtbPrecio.TabIndex = 4;
             this.mtbPrecio.ValidatingType = typeof(int);
             this.mtbPrecio.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbPrecio_MaskInputRejected);
             // 
@@ -220,7 +220,7 @@
             this.mtbStock.Mask = "999999";
             this.mtbStock.Name = "mtbStock";
             this.mtbStock.Size = new System.Drawing.Size(100, 20);
-            this.mtbStock.TabIndex = 19;
+            this.mtbStock.TabIndex = 2;
             this.mtbStock.ValidatingType = typeof(int);
             this.mtbStock.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbStock_MaskInputRejected);
             // 
