@@ -41,44 +41,45 @@ namespace pryPosse20260401
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (mtbCodigo.Text == "")
+            if (txtNombre.Text == "")
             {
-                MessageBox.Show("Completá el código nerea");
-                mtbCodigo.Focus();
-            }
+                MessageBox.Show("Completá el nombre nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNombre.Focus();
+            }     
             else
             {
-                if (txtNombre.Text == "")
+                if (mtbCodigo.Text == "")
                 {
-                    MessageBox.Show("Completá el nombre nerea");
-                    txtNombre.Focus();
+                        MessageBox.Show("Completá el código nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mtbCodigo.Focus();
                 }
+             
                 else
                 {
                     if (txtDescripcion.Text == "")
                     { 
-                        MessageBox.Show("Completá la descripción nerea");
+                        MessageBox.Show("Completá la descripción nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtDescripcion.Focus();
                     }
                     else
                     {
                         if (mtbPrecio.Text == "")
                         {
-                            MessageBox.Show("Completá el precio nerea");
+                            MessageBox.Show("Completá el precio nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             mtbPrecio.Focus();
                         }
                         else 
                         {
                             if (mtbStock.Text == "")
                             {
-                                MessageBox.Show("Marcá el stock nerea");
+                                MessageBox.Show("Marcá el stock nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 mtbStock.Focus();   
                             }
                             else
                             {
                                 if (cmbCategoria.Text == "")
                                 {
-                                    MessageBox.Show("Seleccioná la categoría nerea");
+                                    MessageBox.Show("Seleccioná la categoría nerea", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     cmbCategoria.Focus();   
                                 }
                             }
@@ -95,16 +96,26 @@ namespace pryPosse20260401
                     + cmbCategoria.Text;
 
             varCodigo = mtbCodigo.Text;
-            //pasar un texto a numero 2 formas:
-            varStock = Convert.ToInt16(mtbStock.Text);
-            varPrecio = int.Parse(mtbPrecio.Text);
+
+            if (mtbStock.Text != "" && !int.TryParse(mtbStock.Text, out varStock))
+            {
+                MessageBox.Show("Stock inválido. Ingresa un número entero.", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mtbStock.Focus();
+                return;
+            }
+            if (mtbPrecio.Text != "" && !int.TryParse(mtbPrecio.Text, out varPrecio))
+            {
+                MessageBox.Show("Precio inválido. Ingresa un número entero.", "OJO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mtbPrecio.Focus();
+                return;
+            }
+
             varNombre = txtNombre.Text;
             varCategoria = cmbCategoria.Text;
 
             lblRegVariables.Text = varCodigo +" "+ varStock.ToString() + " " + varCategoria + " " + varDescripcion + " " + varPrecio.ToString() + " " + varNombre;
         
             string datoagregado = varCodigo.ToString() + " " + varStock.ToString() + " " + varCategoria + " " + varDescripcion + " " + varPrecio.ToString() + " " + varNombre;
-            MessageBox.Show(datoagregado);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
