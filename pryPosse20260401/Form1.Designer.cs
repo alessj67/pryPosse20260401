@@ -125,6 +125,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(361, 60);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -164,6 +165,7 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblCategoria
             // 
@@ -181,6 +183,8 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Enabled = false;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Items.AddRange(new object[] {
             "pan ",
@@ -196,6 +200,7 @@
             // 
             // mtbCodigo
             // 
+            this.mtbCodigo.Enabled = false;
             this.mtbCodigo.Location = new System.Drawing.Point(99, 110);
             this.mtbCodigo.Mask = "999999";
             this.mtbCodigo.Name = "mtbCodigo";
@@ -206,6 +211,7 @@
             // 
             // mtbPrecio
             // 
+            this.mtbPrecio.Enabled = false;
             this.mtbPrecio.Location = new System.Drawing.Point(361, 131);
             this.mtbPrecio.Mask = "999999";
             this.mtbPrecio.Name = "mtbPrecio";
@@ -216,6 +222,7 @@
             // 
             // mtbStock
             // 
+            this.mtbStock.Enabled = false;
             this.mtbStock.Location = new System.Drawing.Point(99, 176);
             this.mtbStock.Mask = "999999";
             this.mtbStock.Name = "mtbStock";
@@ -252,7 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(574, 360);
             this.Controls.Add(this.lblRegVariables);
             this.Controls.Add(this.lblRegistroIG);
             this.Controls.Add(this.mtbStock);
@@ -273,6 +280,7 @@
             this.Controls.Add(this.lblNombreP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

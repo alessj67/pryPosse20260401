@@ -144,28 +144,43 @@ namespace pryPosse20260401
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            txtNombre.Enabled = true;
-            mtbCodigo.Enabled = true; 
+            if (txtNombre.Text != "")
+            {
+                mtbCodigo.Enabled = true;
+            }
         }
 
         private void mtbCodigo_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            mtbStock.Enabled = true;
+            if (mtbCodigo.Text != null)
+            {
+                mtbStock.Enabled = true;
+            }
         }
 
         private void mtbStock_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            txtDescripcion.Enabled = true;
+            if (mtbCodigo.Text != null)
+            {
+                txtDescripcion.Enabled = true;
+            }
         }
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
-            mtbPrecio.Enabled = true;
+            if (mtbCodigo.Text != null)
+            {
+                mtbPrecio.Enabled = true;
+            }
         }
 
         private void mtbPrecio_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            cmbCategoria.Enabled = true;
+            if (mtbCodigo.Text != null)
+            {
+                cmbCategoria.Enabled = true;
+            }
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -176,6 +191,17 @@ namespace pryPosse20260401
         private void label1_Click_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            mtbCodigo.Clear();
+            mtbPrecio.Clear();
+            mtbStock.Clear();
+            txtDescripcion.Clear();
+
+            cmbCategoria.SelectedIndex = -1;
         }
     }
 }
